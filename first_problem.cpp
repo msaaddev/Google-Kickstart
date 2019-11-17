@@ -29,7 +29,7 @@ int main()
         {
             cout << " " << output[j];
         }
-
+        cout << endl;
         delete[] output;
         delete[] numOfCitations;
     }
