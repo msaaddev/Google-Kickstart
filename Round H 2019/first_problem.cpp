@@ -1,4 +1,4 @@
-#include <iostream>
+W#include <iostream>
 using namespace std;
 
 int *hIndex(int numOfTestCases, int numOfPapers, int *&numOfCitations, int *&output);
