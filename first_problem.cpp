@@ -54,20 +54,45 @@ int *hIndex(int numOfTestCases, int numOfPapers, int *&numOfCitations, int *&out
         else
         {
             int min = numOfCitations[0];
+            int papers = 0;
+            int count = 0;
             for (int j = 0; j <= i - 1; j++)
             {
                 if (min > numOfCitations[j + 1])
-                    min = numOfCitations[j + 1];
-
-                if (numOfCitations[i] <= numOfCitations[j])
                 {
-                    output[i] = numOfCitations[i];
-                    break;
+                    min = numOfCitations[j + 1];
+                }
+
+                if (numOfCitations[i] == numOfCitations[j])
+                {
+                    papers++;
+                    if (numOfCitations[i] != papers + 1)
+                    {
+                        output[i] = papers + 1;
+                        papers = 0;
+                    }
                 }
                 else
                 {
-
-                    output[i] = min;
+                    if (numOfCitations[i] <= numOfCitations[j])
+                    {
+                        output[i] = numOfCitations[i];
+                        break;
+                    }
+                    else
+                    {
+                        int max = numOfCitations[0];
+                        int count = 0;
+                        for (int k = 0; k <= i - 1; k++)
+                        {
+                            if (max < numOfCitations[k+1])
+                            {
+                                max = numOfCitations[k];
+                                count++;
+                            }
+                        }
+                        output[i] = count;
+                    }
                 }
             }
         }
