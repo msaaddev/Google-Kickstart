@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        ".php_cs": "php",
+        ".php_cs.dist": "php",
+        "*.php": "php",
+        "iostream": "cpp"
+    }
+}
